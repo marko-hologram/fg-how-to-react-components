@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import { Tabs } from './components/Tabs/Tabs';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Tabs>
+        <Tabs.Nav>
+          <Tabs.NavItem>Tab 1</Tabs.NavItem>
+          <Tabs.NavItem>Tab 2</Tabs.NavItem>
+          <Tabs.NavItem>Tab 3</Tabs.NavItem>
+        </Tabs.Nav>
+        <Tabs.Data>
+          <Tabs.TabContent>Tab 1 has this data</Tabs.TabContent>
+          <Tabs.TabContent>
+            <button>Random Button</button>
+          </Tabs.TabContent>
+          <Tabs.TabContent>
+            <Tabs>
+              <Tabs.Nav>
+                <Tabs.NavItem>Tab 1</Tabs.NavItem>
+                <Tabs.NavItem>Tab 2</Tabs.NavItem>
+                <Tabs.NavItem>Tab 3</Tabs.NavItem>
+              </Tabs.Nav>
+              <Tabs.Data>
+                <Tabs.TabContent>1</Tabs.TabContent>
+                <Tabs.TabContent>2</Tabs.TabContent>
+                <Tabs.TabContent>3</Tabs.TabContent>
+              </Tabs.Data>
+            </Tabs>
+          </Tabs.TabContent>
+        </Tabs.Data>
+      </Tabs>
     </div>
   );
 }
